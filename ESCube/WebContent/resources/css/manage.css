@@ -1,0 +1,21 @@
+#manageNavbar {
+	background-color: rgba(255, 255, 255, 0.7);
+	
+	margin: 0 auto;
+	
+	width: 600px;
+}
+
+#manageNavbar a {
+	color: black;
+	font-weight: 100;
+	color: deepskyblue;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: 800;
+	font-size: 18px;
+}
+
+#manageNavbar td {
+	text-align: center;
+}

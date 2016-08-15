@@ -1,0 +1,31 @@
+.formlook {
+	width: 600px;
+	margin: 0 auto;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 30px;
+	text-align: left;
+	margin-top: 10px;
+}
+
+.formlook label {
+	color: deepskyblue;
+	font-size: 24px;
+}
+
+.formlook table td {
+	padding: 5px;
+	white-space: nowrap;
+}
+
+.formlook input[type="text"], .formlook input[type="password"]
+	{
+	width: 100%;
+}
+
+.formlook table {
+	width: 100%;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.9);
+	border-radius: 10px;
+}

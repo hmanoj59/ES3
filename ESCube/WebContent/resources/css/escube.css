@@ -1,0 +1,210 @@
+body {
+	font-family: 'Roboto Condensed', sans-serif;
+	/*                background-color: rgba(0, 0, 0, 0.7);*/
+}
+
+#bodyTable {
+	width: 100%;
+}
+
+#navbar {
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 10px;
+	border-radius: 5px;
+	margin: 0 auto;
+	background-color: deepskyblue;
+	box-shadow: 0px 0px 5px 2px darkgray, inset 0px 0px 2px 1px whitesmoke;
+}
+
+#navbar a {
+	color: black;
+	text-decoration: none;
+	font-weight: 100;
+	color: white;
+}
+
+#navbar td {
+	text-align: center;
+}
+
+#footer {
+	background-color: rgba(255, 255, 255, 0.7);
+	padding: 10px;
+	border-radius: 2px;
+	margin: 0 auto;
+	background-color: whitesmoke;
+	width: 100%;
+	position: fixed;
+	bottom: 5px;
+	
+	display: none;
+}
+
+#footer a {
+	color: black;
+	text-decoration: none;
+	font-weight: 100;
+	color: gray;
+	font-size: 14px;
+}
+
+#footer td {
+	text-align: center;
+}
+
+#content {
+	height: auto;
+	min-height: 500px;
+	text-align: center;
+	/*                display: table-cell;*/
+	font-size: 300px;
+	color: yellowgreen;
+}
+
+table {
+	width: 100%;
+}
+
+.customnavbar a {
+	color: white;
+	font-size: 24px;
+	height: 50px;
+}
+
+#navbarH {
+	margin: 0 auto;
+	width: 900px;
+}
+
+#navbarH li {
+	
+}
+
+#leftPane {
+	width: 400px;
+	max-width: 400px;
+	min-width: 400px;
+	padding: 5px;
+	background-color: rgba(255, 255, 255, 0.775);
+	box-shadow: 10px 3px 20px 2px rgba(255, 255, 255, 0.5);
+	padding: 5px;
+}
+
+#leftpaneCourseList {
+	height: 590px;
+	max-height: 590px;
+	overflow-y: scroll;
+}
+
+.courseflow {
+	padding: 10px;
+}
+
+.largecourse {
+	width: 440px;
+	box-shadow: 0px 0px 2px 2px lightgray;
+	border-radius: 3px;
+	padding: 5px;
+	margin: 5px;
+	float: left;
+	
+	color: black;
+	text-decoration: none;
+	font-weight: 100;
+	color: gray;
+	font-size: 14px;
+		box-shadow: 0px 0px 3px 1px lightgray;
+		
+		background-color: white;
+	
+}
+
+.largecourse p.description {
+	max-height: 200px;
+	overflow-y: hidden;
+	text-overflow: ellipsis;
+	text-align: justify;
+	padding: 5px;
+	color: darkslategray;
+	clear: both;
+}
+
+.largecourse p.title {
+	font-weight: bold;
+}
+
+.largecourse span.dates {
+	border: solid rgba(0, 0, 0, 0.2);
+	border-width: 0px 1px 0px 1px;
+	padding: 0px 5px 0px 5px;
+	float: left;
+}
+
+.largecourse span.openseats {
+	float: right;
+	color: darkslategray;
+	background-color: white;
+}
+.largecourse img{
+	width: 100%;
+}
+.progress {
+	margin-bottom: 10px;
+}
+
+.list-group-item {
+	background-color: rgba(255, 255, 255, 1);
+	/* 	margin-bottom: 1px;*/
+	padding: 3px 3px;
+	margin: 2px;
+}
+
+td {
+	vertical-align: top;
+}
+
+.username a{
+background-color: navy;
+padding: 5px;
+border-radius: 5px;
+color: black;
+	
+	
+}
+
+#myCarousel {
+	height: 600px;
+	min-height: 600px;
+	max-height: 600px;
+}
+
+.page {
+	margin: 0 auto;
+	height: 600px;
+	width: 600px;
+	border: solid lightgray;
+	border-width: 0px 1px 0px 1px;
+	margin-top: 10px;
+	/* 	box-shadow: 1px -1px -1px 1px gray;
+ */
+}
+
+.bg {
+	background-image: url(../slide3.jpg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 800px;
+}
+
+input[type="submit"] {
+	border: none;
+	background-color: yellowgreen;
+	border-radius: 3px;
+	font-size: 16px;
+	box-shadow: 0px 0px 2px 1px gray;
+}
+
+pre{
+	text-align: left;
+	margin-left: 150px;
+}

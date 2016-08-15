@@ -1,0 +1,33 @@
+#loginForm {
+	width: 300px;
+	margin: 0 auto;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 30px;
+	margin-top: 50px;
+	text-align: left;
+}
+#loginForm label{
+	color: deepskyblue;
+	font-size: 24px;
+}
+
+#loginForm table td {
+	padding: 10px;
+}
+
+#loginForm input[type="text"], #loginForm input[type="password"] {
+	width: 100%;
+}
+
+#loginForm input[type="submit"] {
+    border: none;
+	background-color: yellowgreen;
+	border-radius: 1px;
+}
+
+#loginForm table {
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	border-radius: 10px;
+}

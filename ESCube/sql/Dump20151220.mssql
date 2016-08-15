@@ -1,0 +1,219 @@
+-- MySQL dump 10.13  Distrib 5.6.24, for osx10.8 (x86_64)
+--
+-- Host: 127.0.0.1    Database: escube
+-- ------------------------------------------------------
+-- Server version	5.6.27
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `Classroom`
+--
+
+DROP TABLE IF EXISTS `Classroom`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Classroom` (
+  `ClassroomID` int(10) NOT NULL,
+  `RoomNumber` varchar(10) NOT NULL,
+  `Campus` varchar(50) NOT NULL,
+  `SeatingCapacity` int(10) NOT NULL,
+  PRIMARY KEY (`ClassroomID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Classroom`
+--
+
+LOCK TABLES `Classroom` WRITE;
+/*!40000 ALTER TABLE `Classroom` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Classroom` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Course`
+--
+
+DROP TABLE IF EXISTS `Course`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Course` (
+  `CourseID` int(10) NOT NULL,
+  `CourseDesc` varchar(200) NOT NULL,
+  PRIMARY KEY (`CourseID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Course`
+--
+
+LOCK TABLES `Course` WRITE;
+/*!40000 ALTER TABLE `Course` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Course` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `CourseRegistrations`
+--
+
+DROP TABLE IF EXISTS `CourseRegistrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `CourseRegistrations` (
+  `RegID` int(10) NOT NULL,
+  `PersonID` int(10) NOT NULL,
+  `ClassroomID` int(10) NOT NULL,
+  `CourseID` int(10) NOT NULL,
+  `ScheduleID` int(10) NOT NULL,
+  `RegTimestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `ConfirmedFlag` int(1) NOT NULL,
+  `DropTimestamp` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `DroppedFlag` int(1) NOT NULL,
+  `WaitlistFlag` int(1) NOT NULL,
+  PRIMARY KEY (`RegID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `CourseRegistrations`
+--
+
+LOCK TABLES `CourseRegistrations` WRITE;
+/*!40000 ALTER TABLE `CourseRegistrations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `CourseRegistrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Donations`
+--
+
+DROP TABLE IF EXISTS `Donations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Donations` (
+  `DonationID` int(10) NOT NULL,
+  `PersonID` int(10) NOT NULL,
+  `PaymentMethod` varchar(10) NOT NULL,
+  `Amount` int(11) NOT NULL,
+  `Person_PersonID` int(10) NOT NULL,
+  PRIMARY KEY (`DonationID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Donations`
+--
+
+LOCK TABLES `Donations` WRITE;
+/*!40000 ALTER TABLE `Donations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Donations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `FacultyVolunteers`
+--
+
+DROP TABLE IF EXISTS `FacultyVolunteers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `FacultyVolunteers` (
+  `FacultyID` int(10) NOT NULL,
+  `PersonID` int(10) NOT NULL,
+  `CourseID` int(10) NOT NULL,
+  `ScheduleID` int(10) NOT NULL,
+  `StandByFlag` int(1) NOT NULL,
+  `StandByEmail` varchar(25) NOT NULL,
+  `ApprovedBy` int(10) NOT NULL,
+  `WithdrawFlag` int(1) NOT NULL,
+  `WithdrawTimestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`FacultyID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `FacultyVolunteers`
+--
+
+LOCK TABLES `FacultyVolunteers` WRITE;
+/*!40000 ALTER TABLE `FacultyVolunteers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `FacultyVolunteers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Person`
+--
+
+DROP TABLE IF EXISTS `Person`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Person` (
+  `PersonID` int(10) NOT NULL,
+  `FirstName` varchar(50) NOT NULL,
+  `LastName` varchar(50) NOT NULL,
+  `MiddleInitial` varchar(50) NOT NULL,
+  `AddressLine1` varchar(150) NOT NULL,
+  `AddressLine2` varchar(150) NOT NULL,
+  `State` varchar(25) NOT NULL,
+  `Country` varchar(50) NOT NULL,
+  `Zip` int(5) NOT NULL,
+  `ITUStudentFlag` int(1) NOT NULL,
+  PRIMARY KEY (`PersonID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Person`
+--
+
+LOCK TABLES `Person` WRITE;
+/*!40000 ALTER TABLE `Person` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Person` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Schedules`
+--
+
+DROP TABLE IF EXISTS `Schedules`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Schedules` (
+  `ScheduleID` int(10) NOT NULL,
+  `CourseID` int(10) NOT NULL,
+  `Timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `Course_CourseID` int(10) NOT NULL,
+  `Classroom_ClassroomID` int(10) NOT NULL,
+  PRIMARY KEY (`ScheduleID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Schedules`
+--
+
+LOCK TABLES `Schedules` WRITE;
+/*!40000 ALTER TABLE `Schedules` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Schedules` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2015-12-20 12:58:28
